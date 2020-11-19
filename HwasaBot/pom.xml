@@ -7,7 +7,6 @@
 	<groupId>ca.sheridancollege.tanciong</groupId>
 	<artifactId>HwasaBot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
 	<name>React.js Blank Project (from https://github.com/making/maven-reactjs-blank)</name>
 
@@ -40,6 +39,12 @@
 			<version>4.2.0_208</version>
 			<type>jar</type>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+			<version>1.18.16</version>
 		</dependency>
 	</dependencies>
 	<build>

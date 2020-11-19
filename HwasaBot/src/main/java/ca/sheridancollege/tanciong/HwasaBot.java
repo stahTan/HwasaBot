@@ -1,6 +1,5 @@
 package ca.sheridancollege.tanciong;
 
-import java.io.ObjectInputFilter.Config;
 import java.util.concurrent.Executors;
 
 import com.jagrosh.jdautilities.command.CommandClient;
@@ -11,16 +10,19 @@ import ca.sheridancollege.tanciong.commands.About;
 import ca.sheridancollege.tanciong.commands.Ping;
 import ca.sheridancollege.tanciong.commands.Schedule;
 import ca.sheridancollege.tanciong.commands.ServerInfo;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 
 public class HwasaBot {
 	private final EventWaiter waiter;
+	Constants constants = new Constants();
 
 	private HwasaBot() throws Exception{
 		//Config config = ConfigFactory.load();
 		waiter = new EventWaiter(Executors.newSingleThreadScheduledExecutor(), false);
 		CommandClient client = new CommandClientBuilder()
-				.setPrefix(Constants.PREFIX)
+				.setPrefix(constants.getPrefix())
 				.setActivity(Activity.playing("Mamamoo"))
 				.addCommands(
 						new About(),
@@ -30,6 +32,9 @@ public class HwasaBot {
 						)
 
                 .build();
+		
+		JDA jda = JDABuilder.setToken(constants.getToken())
+				.build();
 				
 				
 		
