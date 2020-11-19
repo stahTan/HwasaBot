@@ -16,13 +16,12 @@ import net.dv8tion.jda.api.entities.Activity;
 
 public class HwasaBot {
 	private final EventWaiter waiter;
-	Constants constants = new Constants();
 
 	private HwasaBot() throws Exception{
 		//Config config = ConfigFactory.load();
 		waiter = new EventWaiter(Executors.newSingleThreadScheduledExecutor(), false);
 		CommandClient client = new CommandClientBuilder()
-				.setPrefix(constants.getPrefix())
+				.setPrefix(Constants.getPrefix())
 				.setActivity(Activity.playing("Mamamoo"))
 				.addCommands(
 						new About(),
@@ -33,7 +32,7 @@ public class HwasaBot {
 
                 .build();
 		
-		JDA jda = JDABuilder.setToken(constants.getToken())
+		JDA jda = JDABuilder.createDefault(Constants.getToken())
 				.build();
 				
 				
