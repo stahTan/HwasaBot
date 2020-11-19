@@ -11,7 +11,7 @@ public class Constants {
 	@Getter
     private static String prefix          = "!";
 	@Getter
-    private static String token = "NzYxMDQzNTI4MjA5MDA2NTkz.X3U3BA.y4F9dFmCtaHa391QfgoM7Xbs4kA";
+    private static String token = "";
     
 
 	
